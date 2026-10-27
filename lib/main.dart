@@ -17,6 +17,13 @@ enum GameScreen {
   credits,
 }
 
+class CharacterVoice {
+  final String name;
+  final String line;
+
+  const CharacterVoice({required this.name, required this.line});
+}
+
 class WhisperingForestGame extends StatelessWidget {
   const WhisperingForestGame({super.key});
 
@@ -60,101 +67,116 @@ class _GameHomeState extends State<GameHome> {
       'title': 'Chapter 1',
       'subtitle': 'The Whispering Trail',
       'text':
-          'The forest opens like a throat. Every leaf whispers your name, and the trail behind the chapel is still wet with rain. Something is moving beneath the roots, waiting for you to look away.',
+          'The forest opens like a throat. Rain still hangs in the branches, and every leaf seems to whisper your name. Something moves beneath the roots and is waiting for you to look away.',
       'ending':
-          'The lantern burns blue for a moment, and in the fog you hear a single sentence: “The Hollow remembers.”',
+          'The lantern burns blue. A voice speaks from the fog: “The Hollow remembers.”',
       'items': [
         {
           'name': 'Lantern by the stump',
           'detail':
-              'A storm-bent lantern glows beneath a split tree. The flame is warm, but the handle is wet with a strange black mist.',
+              'A lantern flickers beneath a split oak. Its glow is warm, but the handle is wet with a strange black mist.',
         },
         {
           'name': 'Footprints in the moss',
           'detail':
-              'The prints are too fresh to be old, but they stop at the edge of a ravine where no one should have walked.',
+              'The prints are fresh, but they stop at the edge of a ravine where no one should have walked.',
         },
         {
           'name': 'Whispering oak',
           'detail':
-              'The bark hums with a low voice. It repeats one line over and over: “Do not follow the light without a name.”',
+              'The bark hums with a low voice: “Do not follow the light without a name.”',
         },
         {
           'name': 'Broken sign',
           'detail':
-              'Half of the sign remains, scratched into the wood: “Hollow Road — no return.”',
+              'The weathered sign reads: “Hollow Road — no return.”',
         },
+      ],
+      'characters': [
+        const CharacterVoice(name: 'Mara', line: 'Stay close. The forest listens.'),
+        const CharacterVoice(name: 'Owen', line: 'I heard someone move behind the trees.'),
+        const CharacterVoice(name: 'Iris', line: 'There is a scent of ash in the fog.'),
       ],
     },
     {
       'title': 'Chapter 2',
       'subtitle': 'The Abandoned Cabin',
       'text':
-          'You find a cabin hidden beneath the pines, the windows fogged with dust and breath. Across the floor lies a chair facing the door, as if someone heard you coming before you arrived.',
+          'You discover a forgotten cabin hidden in the pines. Dust covers the floor, and a chair faces the door as though someone heard you coming before you arrived.',
       'ending':
-          'Inside the wall, beneath a portrait of a smiling family, you discover the name of the last survivor: Mara Voss.',
+          'Beneath a cracked portrait, you find the name Mara Voss scratched into the wall.',
       'items': [
         {
           'name': 'Fallen portrait',
           'detail':
-              'A framed photo lies smashed on the floor. Someone scratched the faces out with a nail, leaving only a single eye.',
+              'A family photo is split down the middle. The faces have been scratched away except for one eye.',
         },
         {
           'name': 'Jacket on the chair',
           'detail':
-              'The coat still smells of pine smoke and rain. The pocket contains a silver compass that spins toward the forest heart.',
+              'The coat smells of pine smoke and rain. A silver compass inside spins toward the forest heart.',
         },
         {
           'name': 'Ritual circle',
           'detail':
-              'Candles have melted into a strange ring. At the center sits a small stone engraved with an eye and a broken moon.',
+              'Candles melt into a ring. At the center is a stone marked with a moon and an eye.',
         },
         {
           'name': 'Hidden journal',
           'detail':
-              'The pages warn: “When the woods are quiet, listen for the second footsteps. They are not yours.”',
+              'The page warns: “When the woods go quiet, listen for the second footsteps.”',
         },
+      ],
+      'characters': [
+        const CharacterVoice(name: 'Mara', line: 'This was not a cabin. It was a hiding place.'),
+        const CharacterVoice(name: 'Owen', line: 'Something is still breathing inside these walls.'),
+        const CharacterVoice(name: 'Iris', line: 'The moonstone points deeper into the woods.'),
       ],
     },
     {
       'title': 'Chapter 3',
       'subtitle': 'The Shrine of Echoes',
       'text':
-          'The path narrows to a stone shrine buried beneath roots and fog. The air tastes like iron, and the trees lean in as if they are listening to your heartbeat.',
+          'The trail narrows to a stone shrine buried beneath roots and fog. The air tastes like iron, and the trees lean in as if they are listening to your heartbeat.',
       'ending':
-          'You lift the final relic and hear the forest answer. Somewhere behind the shrine, a door opens in the dark and the story begins again.',
+          'You lift the relic. Behind the shrine, a hidden door opens in the dark and the forest exhales.',
       'items': [
         {
           'name': 'Stone altar',
           'detail':
-              'The altar is carved with faces, all turned toward the same point in the mist. A voice whispers from below the stone.',
+              'The altar bears carved faces turned toward a single point in the fog. A whisper rises from beneath the stone.',
         },
         {
           'name': 'Echoing bell',
           'detail':
-              'Its clapper is rusted, but it rings once when touched. The sound arrives from inside the earth, not from the air.',
+              'The rusted bell rings once when touched, though the sound comes from beneath the ground.',
         },
         {
           'name': 'Moving fog',
           'detail':
-              'The mist forms a human shape and then slips away. A pair of footsteps follows you for a second before vanishing.',
+              'The mist forms a human shape, then dissolves. A second pair of footsteps follows you for one breath.',
         },
         {
           'name': 'Sacred relic',
           'detail':
-              'A smooth silver charm pulses gently in the palm. It is warm, as though it has been waiting for your hand.',
+              'A smooth silver charm pulses in your palm, warm as if it has been waiting for your hand.',
         },
+      ],
+      'characters': [
+        const CharacterVoice(name: 'Mara', line: 'This is the heart of the forest. Do not let it see fear.'),
+        const CharacterVoice(name: 'Owen', line: 'You hear that? It is not wind. It is the forest answering.'),
+        const CharacterVoice(name: 'Iris', line: 'We are not lost. We are being called.'),
       ],
     },
   ];
 
   final List<String> credits = [
     'Lead Game Design — Maria Atta',
-    'Narrative Director — The Hollow Team',
-    'Environment Art — Night Forest Studios',
-    'Audio Production — Whisper Echo Lab',
+    'Narrative Direction — Whisper Hollow Studio',
+    'Environment Art — Night Forest Team',
+    'Audio Design — Echo Room Lab',
     'Programming — Flutter + Dart',
-    'Special Thanks — The Players Who Followed the Light',
+    'Special Thanks — All who follow the forest light',
   ];
 
   @override
@@ -167,7 +189,7 @@ class _GameHomeState extends State<GameHome> {
   Future<void> _speak(String text) async {
     if (!_voiceOn || text.isEmpty) return;
     await _tts.setLanguage('en-US');
-    await _tts.setSpeechRate(0.9);
+    await _tts.setSpeechRate(0.92);
     await _tts.setVolume(1.0);
     await _tts.speak(text);
   }
@@ -189,7 +211,7 @@ class _GameHomeState extends State<GameHome> {
       );
       await _audioPlayer.setReleaseMode(ReleaseMode.loop);
     } catch (_) {
-      // Silent fallback for offline or blocked media access.
+      // Intentionally silent when media is blocked or unavailable.
     }
   }
 
@@ -207,13 +229,18 @@ class _GameHomeState extends State<GameHome> {
 
     set.add(itemName);
     final chapter = chapters[_chapterIndex];
-    final item = (chapter['items'] as List).firstWhere(
+    final items = chapter['items'] as List<Map<String, dynamic>>;
+    final item = items.firstWhere(
       (entry) => entry['name'] == itemName,
-      orElse: () => {'detail': 'The darkness grows thicker around you.'},
+      orElse: () => {'detail': 'The dark grows deeper around you.'},
     );
 
-    _speak(item['detail']);
+    _speak(item['detail'] as String);
     setState(() {});
+  }
+
+  void _playCharacterVoice(CharacterVoice voice) {
+    _speak('${voice.name}: ${voice.line}');
   }
 
   void _advanceStory() {
@@ -226,7 +253,7 @@ class _GameHomeState extends State<GameHome> {
     }
 
     _screen = GameScreen.outro;
-    _speak('The story ends. But the forest is still awake.');
+    _speak('The story ends, but the forest is still awake.');
     setState(() {});
   }
 
@@ -262,20 +289,20 @@ class _GameHomeState extends State<GameHome> {
         child: Stack(
           children: [
             Positioned(
-              top: 80,
-              left: 40,
+              top: 90,
+              left: 48,
               child: Container(
                 width: 220,
                 height: 220,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF3BB98C).withOpacity(0.16),
+                  color: const Color(0xFF3BB98C).withOpacity(0.15),
                 ),
               ),
             ),
             Positioned(
-              bottom: 120,
-              right: 60,
+              bottom: 90,
+              right: 42,
               child: Container(
                 width: 260,
                 height: 260,
@@ -294,46 +321,46 @@ class _GameHomeState extends State<GameHome> {
                     Text(
                       'WHISPERS',
                       style: GoogleFonts.cinzel(
-                        fontSize: 34,
+                        fontSize: 36,
                         letterSpacing: 5,
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 8),
                     Text(
                       'IN THE HOLLOW',
                       style: GoogleFonts.cinzel(
                         fontSize: 18,
-                        letterSpacing: 8,
+                        letterSpacing: 7,
                         color: const Color(0xFFB9E7D5),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const SizedBox(height: 28),
+                    const SizedBox(height: 26),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white.withOpacity(0.2)),
+                        border: Border.all(color: Colors.white.withOpacity(0.22)),
                         borderRadius: BorderRadius.circular(18),
                         color: Colors.black.withOpacity(0.18),
                       ),
                       child: Text(
-                        'A survival story in the dark forest',
+                        'Cinematic forest mystery',
                         style: GoogleFonts.poppins(
                           fontSize: 15,
-                          letterSpacing: 1.2,
+                          letterSpacing: 1.1,
                           color: const Color(0xFFDDE9E3),
                         ),
                       ),
                     ),
-                    const SizedBox(height: 44),
+                    const SizedBox(height: 46),
                     SizedBox(
                       width: 220,
                       child: ElevatedButton(
                         onPressed: _startGame,
                         style: ElevatedButton.styleFrom(
-                          minimumSize: const Size.fromHeight(54),
+                          minimumSize: const Size.fromHeight(56),
                           backgroundColor: const Color(0xFF48DDA7),
                           foregroundColor: const Color(0xFF052415),
                           shape: RoundedRectangleBorder(
@@ -375,7 +402,7 @@ class _GameHomeState extends State<GameHome> {
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 26),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -424,6 +451,7 @@ class _GameHomeState extends State<GameHome> {
     final chapter = chapters[_chapterIndex];
     final items = chapter['items'] as List<Map<String, dynamic>>;
     final discovered = _discovered[_chapterIndex] ?? <String>{};
+    final characters = chapter['characters'] as List<CharacterVoice>;
 
     return Scaffold(
       body: DecoratedBox(
@@ -443,13 +471,13 @@ class _GameHomeState extends State<GameHome> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.08),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        chapter['title'],
+                        chapter['title'] as String,
                         style: GoogleFonts.poppins(
                           color: const Color(0xFF9DEFC8),
                           fontWeight: FontWeight.w700,
@@ -465,26 +493,71 @@ class _GameHomeState extends State<GameHome> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 18),
+                const SizedBox(height: 16),
                 Text(
-                  chapter['subtitle'],
+                  chapter['subtitle'] as String,
                   style: GoogleFonts.cinzel(
                     fontSize: 28,
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 18),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          chapter['text'],
+                          chapter['text'] as String,
                           style: GoogleFonts.poppins(
                             fontSize: 16,
                             height: 1.7,
                             color: const Color(0xFFE6F6F1),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        SizedBox(
+                          height: 90,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: characters.length,
+                            separatorBuilder: (_, __) => const SizedBox(width: 12),
+                            itemBuilder: (context, index) {
+                              final character = characters[index];
+                              return GestureDetector(
+                                onTap: () => _playCharacterVoice(character),
+                                child: Container(
+                                  width: 120,
+                                  padding: const EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.06),
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(color: Colors.white.withOpacity(0.14)),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        character.name,
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 6),
+                                      Text(
+                                        'Voice',
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 11,
+                                          color: const Color(0xFF9DEFC8),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                         ),
                         const SizedBox(height: 22),
@@ -494,7 +567,7 @@ class _GameHomeState extends State<GameHome> {
                           itemCount: items.length,
                           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            childAspectRatio: 1.25,
+                            childAspectRatio: 1.2,
                             crossAxisSpacing: 12,
                             mainAxisSpacing: 12,
                           ),
@@ -503,9 +576,9 @@ class _GameHomeState extends State<GameHome> {
                             final isDiscovered = discovered.contains(item['name']);
 
                             return GestureDetector(
-                              onTap: () => _discoverItem(item['name']),
+                              onTap: () => _discoverItem(item['name'] as String),
                               child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 250),
+                                duration: const Duration(milliseconds: 240),
                                 padding: const EdgeInsets.all(12),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
@@ -528,11 +601,11 @@ class _GameHomeState extends State<GameHome> {
                                         color: isDiscovered
                                             ? const Color(0xFF9DEFC8)
                                             : Colors.white60,
-                                          ),
+                                      ),
                                     ),
                                     const SizedBox(height: 6),
                                     Text(
-                                      item['name'],
+                                      item['name'] as String,
                                       style: GoogleFonts.poppins(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w700,
@@ -541,7 +614,7 @@ class _GameHomeState extends State<GameHome> {
                                     ),
                                     const Spacer(),
                                     Text(
-                                      isDiscovered ? item['detail'] : 'Tap to investigate',
+                                      isDiscovered ? item['detail'] as String : 'Tap to investigate',
                                       style: GoogleFonts.poppins(
                                         fontSize: 12,
                                         color: Colors.white70,
@@ -621,7 +694,7 @@ class _GameHomeState extends State<GameHome> {
                     height: 1.8,
                   ),
                 ),
-                const SizedBox(height: 28),
+                const SizedBox(height: 32),
                 SizedBox(
                   width: 220,
                   child: ElevatedButton(
@@ -669,7 +742,7 @@ class _GameHomeState extends State<GameHome> {
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.06),
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.white.withOpacity(0.1)),
+                        border: Border.all(color: Colors.white.withOpacity(0.10)),
                       ),
                       child: Text(
                         credits[index],
@@ -729,30 +802,3 @@ class _GameHomeState extends State<GameHome> {
     }
   }
 }
-
-class _ForestButton extends StatelessWidget {
-  final String label;
-  final VoidCallback onPressed;
-
-  const _ForestButton({
-    required this.label,
-    required this.onPressed,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: Text(label),
-    );
-  }
-}
-
-/*
-  Game Overview:
-  - Intro sequence with dark cinematic mood and button start
-  - Chapter progression with clickable clue discoverables
-  - Character narration and creepy atmosphere
-  - End section with final suspense and developer credits
-*/
-

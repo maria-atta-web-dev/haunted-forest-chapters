@@ -1,32 +1,32 @@
 # Whispers in the Hollow
-A cinematic, atmospheric mobile story game built with Flutter and Dart.
+A cinematic mobile horror story game built with Flutter and Dart.
 
-This project includes:
-- A cinematic intro sequence
-- Creepy ambient audio trigger and voiceover narration
-- Chapter-based survival storytelling
-- Click-to-discover clues in a dark forest
-- A final suspenseful outro and developer credits
+## Included features
+- Cinematic intro sequence
+- Creepy forest ambience
+- Start game flow
+- Three story chapters with discovery gameplay
+- Character voiceover triggers
+- Atmospheric suspense ending with credits
+- Stylish dark UI for mobile screens
 
-## Prerequisites
-- Flutter SDK 3.3 or newer
-- VS Code with Flutter extension
-- Android Studio or a suitable simulator/device
-
-## Run the app
-1. Open the folder in VS Code.
-2. Run:
+## Run in VS Code
+1. Open the project folder.
+2. In the terminal, run:
    ```bash
    flutter pub get
    flutter run
    ```
-3. On a device or emulator, the game will launch.
+3. Start the app on a device or emulator.
 
 ## Project structure
-- `lib/main.dart` — the complete game logic and UI
+- `lib/main.dart` — main game screen and story logic
 - `pubspec.yaml` — Flutter dependencies
 
 ## Notes
-- The ambient sound uses a remote audio URL so the game has atmosphere immediately.
-- The voiceover is generated through Flutter TTS for story narration.
-- You can replace the remote sound with local assets later for a more polished production build.
+This prototype is designed as a mobile-first interactive story game and can be expanded with:
+- custom local sound assets
+- art backgrounds and character sprites
+- real cutscene transitions
+- advanced touch interactions
+- APK / AAB production builds
