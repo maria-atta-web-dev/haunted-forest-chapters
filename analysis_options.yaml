@@ -1,0 +1,10 @@
+analysis:
+  errors:
+    unused_element: ignore
+    unused_field: ignore
+
+linter:
+  rules:
+    prefer_const_constructors: true
+    prefer_final_fields: true
+    avoid_print: true
